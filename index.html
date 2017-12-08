@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <title>Angular Example</title>
+    </head>
+    <body ng-controller="mainController">
+    	<!-- Static content-->
+    	{{1+2}}
+
+    	<!-- Custom Directive content-->
+    	<custom-directive></custom-directive>
+    	
+    	<!-- Linked Directive content-->
+    	<linked-directive title="Linked Title"></linked-directive>
+    </body>
+
+    <!-- Required File Inclusion-->
+    <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</html>
