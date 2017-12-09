@@ -38,10 +38,18 @@ This section lists simple steps to define a custom directive in an AngularJS mod
 3) template: By this property we can defines the content that should be output from the directive. We can include HTML, data binding expressions, and even other directives too.  
 4) templateUrl: This property will provides the path to the template that should be used by the directive. It can be optionally contain a DOM element id when templates are defined in <script> tags.  
 5) controller: We can associate our controller to the directive template using this property  
-6) link: Use this properties when we need to perform any action OR event with function which used for DOM manipulation tasks.  
-7) transclude: Will used to whether to transfer and include the original child content of the directive's HTML markup in the destination markup which is defined in the template.  
+6) link: Use this properties when we need to perform any action OR event with function which used for DOM manipulation tasks.      
+7) transclude: Will used to whether to transfer and include the original child content of the directive's HTML markup in the destination markup which is defined in the template.      
   
+**Some basic fundamental of scope**    
+When we are setting scope: true in directive, and directive is custom, the scope of the directive could be in Isolated scope, It means the directive does not share a scope with the controller; both directive and controller have their own scope. Angular js will create a new scope for that directive. That means any changes made to the directive scope will not reflect back in parent controller.     
+    
+`<` is for one-way binding and available since v1.5.   
+`@` pass string value, one way binding. These strings support {{}} expressions for interpolated values.   
+`=` pass object, 2 ways binding. The model in parent scope is linked to the model in the directive's isolated scope.  
+`&` pass a method into your directive's scope so that it can be called within your directive. Also can pass data from directive to controller.  
   
+    
 **index.html code** 
 ```html
 <body ng-controller="mainController">
